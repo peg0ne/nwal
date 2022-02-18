@@ -1,5 +1,6 @@
 import nimporter
 import nwal
+import sys
 from PIL import Image
 
 def fetchpixels(path):
@@ -12,7 +13,7 @@ def getColors(path):
     return co
 
 if __name__ == '__main__':
-    co = getColors("test.webp")
+    co = getColors(sys.argv[1])
     base = nwal.getBase()
     im = Image.new(mode="RGB", size=(len(co),2))
     for i in range(len(co)):
